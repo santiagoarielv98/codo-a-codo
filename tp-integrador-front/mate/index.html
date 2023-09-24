@@ -9,6 +9,31 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3" />
     <link href="./css/bootstrap.min.css" rel="stylesheet" />
     <style>
+      :root,
+      [data-bs-theme="dark"] {
+        --secondary-color: #f44336;
+        --bs-primary-rgb: 244, 67, 54;
+      }
+      .nav {
+        --bs-nav-link-color: #fff;
+        --bs-nav-link-hover-color: RGBA(var(--bs-emphasis-color-rgb), var(--bs-link-opacity, 0.75));
+      }
+      .nav-pills {
+        --bs-nav-pills-link-active-bg: var(--secondary-color);
+      }
+      .btn-primary {
+        --bs-btn-bg: var(--secondary-color);
+        --bs-btn-border-color: var(--secondary-color);
+        --bs-btn-hover-bg: #e53935;
+        --bs-btn-hover-border-color: #e53935;
+        --bs-btn-focus-shadow-rgb: 229, 57, 53;
+        --bs-btn-active-bg: #d32f2f;
+        --bs-btn-active-border-color: #d32f2f;
+        --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+        --bs-btn-disabled-bg: var(--secondary-color);
+        --bs-btn-disabled-border-color: var(--secondary-color);
+      }
+
       .bd-placeholder-img {
         font-size: 1.125rem;
         text-anchor: middle;
@@ -61,23 +86,6 @@
         -webkit-overflow-scrolling: touch;
       }
 
-      .btn-bd-primary {
-        --bd-violet-bg: #712cf9;
-        --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
-
-        --bs-btn-font-weight: 600;
-        --bs-btn-color: var(--bs-white);
-        --bs-btn-bg: var(--bd-violet-bg);
-        --bs-btn-border-color: var(--bd-violet-bg);
-        --bs-btn-hover-color: var(--bs-white);
-        --bs-btn-hover-bg: #6528e0;
-        --bs-btn-hover-border-color: #6528e0;
-        --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
-        --bs-btn-active-color: var(--bs-btn-hover-color);
-        --bs-btn-active-bg: #5a23c8;
-        --bs-btn-active-border-color: #5a23c8;
-      }
-
       .bd-mode-toggle {
         z-index: 1500;
       }
@@ -92,14 +100,12 @@
   </head>
   <body>
     <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
-      <symbol id="bootstrap" viewBox="0 0 118 94">
-        <title>Bootstrap</title>
+      <symbol id="mate" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32px" height="32px">
         <path
-          fill-rule="evenodd"
-          clip-rule="evenodd"
-          d="M24.509 0c-6.733 0-11.715 5.893-11.492 12.284.214 6.14-.064 14.092-2.066 20.577C8.943 39.365 5.547 43.485 0 44.014v5.972c5.547.529 8.943 4.649 10.951 11.153 2.002 6.485 2.28 14.437 2.066 20.577C12.794 88.106 17.776 94 24.51 94H93.5c6.733 0 11.714-5.893 11.491-12.284-.214-6.14.064-14.092 2.066-20.577 2.009-6.504 5.396-10.624 10.943-11.153v-5.972c-5.547-.529-8.934-4.649-10.943-11.153-2.002-6.484-2.28-14.437-2.066-20.577C105.214 5.894 100.233 0 93.5 0H24.508zM80 57.863C80 66.663 73.436 72 62.543 72H44a2 2 0 01-2-2V24a2 2 0 012-2h18.437c9.083 0 15.044 4.92 15.044 12.474 0 5.302-4.01 10.049-9.119 10.88v.277C75.317 46.394 80 51.21 80 57.863zM60.521 28.34H49.948v14.934h8.905c6.884 0 10.68-2.772 10.68-7.727 0-4.643-3.264-7.207-9.012-7.207zM49.948 49.2v16.458H60.91c7.167 0 10.964-2.876 10.964-8.281 0-5.406-3.903-8.178-11.425-8.178H49.948z"
-        ></path>
+          d="M 25.191406 3.0625 L 22.71875 3.992188 C 21.433594 4.472656 20.367188 5.390625 19.683594 6.570313 C 19.679688 6.570313 19.679688 6.570313 19.679688 6.570313 C 19.664063 6.597656 19.648438 6.617188 19.632813 6.644531 L 19.632813 6.648438 C 19.628906 6.648438 19.628906 6.652344 19.625 6.65625 L 18.988281 7.769531 L 18.65625 8.347656 L 17.800781 9.847656 L 17.800781 9.851563 C 17.785156 9.851563 17.773438 9.851563 17.761719 9.855469 C 17.503906 9.898438 17.230469 9.933594 16.949219 9.960938 C 16.941406 9.960938 16.933594 9.960938 16.925781 9.960938 C 16.925781 9.960938 16.921875 9.960938 16.921875 9.960938 C 16.625 9.984375 16.316406 10 16 10 C 15.683594 10 15.375 9.984375 15.078125 9.960938 C 15.074219 9.960938 15.074219 9.960938 15.074219 9.960938 C 15.066406 9.960938 15.058594 9.960938 15.050781 9.960938 C 14.769531 9.933594 14.5 9.898438 14.246094 9.859375 C 14.214844 9.851563 14.1875 9.84375 14.15625 9.839844 C 13.949219 9.804688 13.757813 9.761719 13.574219 9.714844 C 13.503906 9.699219 13.4375 9.679688 13.375 9.664063 C 13.285156 9.636719 13.207031 9.609375 13.125 9.578125 C 12.890625 9.5 12.695313 9.421875 12.535156 9.339844 C 12.488281 9.316406 12.429688 9.292969 12.390625 9.269531 C 12.21875 9.171875 12.085938 9.078125 12.027344 9 C 12.027344 9 12.03125 8.996094 12.03125 9 C 12.03125 9 12.035156 8.992188 12.035156 8.992188 C 12 9.035156 11.972656 9.066406 12.0625 8.972656 C 12.070313 8.964844 12.058594 8.980469 12.070313 8.96875 L 12.066406 8.96875 C 12.378906 8.632813 13.71875 8 16 8 C 16.195313 8 16.371094 8.011719 16.554688 8.019531 L 17.640625 6.101563 C 17.101563 6.035156 16.546875 6 16 6 C 13.714844 6 11.300781 6.589844 10.386719 7.851563 C 10.140625 8.144531 9.742188 8.640625 9.257813 9.332031 C 8.96875 9.742188 8.683594 10.175781 8.453125 10.601563 C 8.351563 10.789063 8.257813 10.964844 8.179688 11.152344 C 6.234375 13.5625 5 16.707031 5 20 C 5 24.953125 10.023438 29 16 29 C 21.964844 29 27 25.023438 27 20 C 27 16.707031 25.765625 13.5625 23.820313 11.152344 C 23.738281 10.960938 23.644531 10.785156 23.542969 10.59375 C 23.308594 10.164063 23.019531 9.71875 22.722656 9.300781 C 22.429688 8.882813 22.132813 8.496094 21.890625 8.1875 C 21.789063 8.058594 21.730469 8.003906 21.660156 7.914063 C 21.582031 7.800781 21.496094 7.695313 21.394531 7.59375 C 21.847656 6.796875 22.5625 6.1875 23.417969 5.867188 L 23.421875 5.867188 L 25.894531 4.9375 Z M 21.191406 10.609375 C 21.417969 10.9375 21.636719 11.273438 21.785156 11.546875 C 21.898438 11.753906 21.949219 11.941406 21.976563 12.011719 C 21.980469 12.019531 21.988281 12.039063 21.988281 12.046875 C 21.976563 12.140625 21.9375 12.265625 21.738281 12.464844 C 21.511719 12.695313 21.105469 12.96875 20.558594 13.203125 C 19.734375 13.554688 18.605469 13.828125 17.324219 13.941406 C 16.898438 13.980469 16.453125 14 16 14 C 14.183594 14 12.539063 13.671875 11.441406 13.203125 C 10.894531 12.96875 10.488281 12.695313 10.261719 12.464844 C 10.148438 12.351563 10.085938 12.257813 10.046875 12.183594 C 10.019531 12.128906 10.015625 12.085938 10.011719 12.046875 C 10.011719 12.046875 10.011719 12.042969 10.011719 12.042969 C 10.015625 12.035156 10.023438 12.003906 10.035156 11.96875 C 10.039063 11.964844 10.039063 11.960938 10.042969 11.957031 C 10.074219 11.863281 10.125 11.710938 10.210938 11.550781 C 10.359375 11.277344 10.582031 10.941406 10.8125 10.609375 C 10.980469 10.753906 11.191406 10.878906 11.402344 11 C 11.425781 11.011719 11.453125 11.023438 11.480469 11.039063 C 11.65625 11.136719 11.835938 11.234375 12.035156 11.316406 C 12.058594 11.324219 12.074219 11.335938 12.09375 11.34375 C 12.242188 11.402344 12.410156 11.449219 12.570313 11.5 C 12.671875 11.535156 12.765625 11.574219 12.875 11.605469 C 13.789063 11.863281 14.851563 12 16 12 C 17.148438 12 18.210938 11.863281 19.125 11.605469 C 19.234375 11.574219 19.328125 11.535156 19.429688 11.5 C 19.589844 11.449219 19.757813 11.402344 19.90625 11.34375 C 19.925781 11.335938 19.941406 11.324219 19.964844 11.316406 C 20.164063 11.234375 20.34375 11.136719 20.519531 11.039063 C 20.546875 11.023438 20.574219 11.011719 20.597656 11 C 20.808594 10.875 21.019531 10.753906 21.191406 10.609375 Z M 8.867188 13.894531 C 9.105469 14.132813 9.375 14.34375 9.675781 14.53125 C 9.976563 14.722656 10.304688 14.890625 10.65625 15.042969 C 12.09375 15.65625 13.953125 16 16 16 C 18.046875 16 19.90625 15.65625 21.34375 15.042969 C 21.695313 14.890625 22.023438 14.722656 22.324219 14.53125 C 22.625 14.34375 22.894531 14.132813 23.136719 13.894531 C 24.210938 15.726563 25 17.792969 25 20 C 25 23.644531 21.082031 27 16 27 C 10.929688 27 7 23.546875 7 20 C 7 17.796875 7.789063 15.726563 8.867188 13.894531 Z"
+        />
       </symbol>
+
       <symbol id="facebook" viewBox="0 0 16 16">
         <path
           d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"
@@ -139,20 +145,39 @@
         />
       </symbol>
     </svg>
-    <header
-      data-bs-theme="dark"
-      class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom fixed-top bg-dark"
-    >
-      <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
-      </a>
-
-      <ul class="nav nav-pills">
-        <li class="nav-item"><a href="#" class="nav-link active" aria-current="page">Home</a></li>
-        <li class="nav-item"><a href="#" class="nav-link">Features</a></li>
-        <li class="nav-item"><a href="#" class="nav-link">Pricing</a></li>
-        <li class="nav-item"><a href="#" class="nav-link">FAQs</a></li>
-        <li class="nav-item"><a href="#" class="nav-link">About</a></li>
-      </ul>
+    <header data-bs-theme="dark" class="navbar navbar-expand-lg bg-body-tertiary sticky-top">
+      <div class="container-fluid">
+        <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+          <svg class="bi" width="50" height="50" viewBox="0 0 32 32">
+            <use xlink:href="#mate"></use>
+          </svg>
+          <span class="fs-4">
+            SV
+            <b class="text-primary">~</b>
+            Mate</span
+          >
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse my-2 flex-grow-0" id="navbarSupportedContent">
+          <ul class="nav nav-pills flex-column flex-lg-row">
+            <li class="nav-item"><a href="#" class="nav-link active" aria-current="page">Home</a></li>
+            <li class="nav-item"><a href="#" class="nav-link">Features</a></li>
+            <li class="nav-item"><a href="#" class="nav-link">Pricing</a></li>
+            <li class="nav-item"><a href="#" class="nav-link">FAQs</a></li>
+            <li class="nav-item"><a href="#" class="nav-link">About</a></li>
+          </ul>
+        </div>
+      </div>
     </header>
 
     <main>
@@ -171,17 +196,13 @@
         </div>
         <div class="carousel-inner">
           <div style="height: 32rem" class="carousel-item active">
-            <svg
-              class="bd-placeholder-img"
-              width="100%"
-              height="100%"
-              xmlns="http://www.w3.org/2000/svg"
-              aria-hidden="true"
-              preserveAspectRatio="xMidYMid slice"
-              focusable="false"
-            >
-              <rect width="100%" height="100%" fill="var(--bs-secondary-color)" />
-            </svg>
+            <img
+              style="filter: brightness(0.4)"
+              src="https://picsum.photos/1200/1000"
+              width="1200"
+              height="1000"
+              class="w-100 h-100 object-fit-cover"
+            />
             <div class="container">
               <div style="bottom: 3rem; z-index: 10" class="text-start carousel-caption">
                 <h1>Example headline.</h1>
@@ -191,17 +212,13 @@
             </div>
           </div>
           <div style="height: 32rem" class="carousel-item">
-            <svg
-              class="bd-placeholder-img"
-              width="100%"
-              height="100%"
-              xmlns="http://www.w3.org/2000/svg"
-              aria-hidden="true"
-              preserveAspectRatio="xMidYMid slice"
-              focusable="false"
-            >
-              <rect width="100%" height="100%" fill="var(--bs-secondary-color)" />
-            </svg>
+            <img
+              style="filter: brightness(0.4)"
+              src="https://picsum.photos/1200/1000"
+              width="1200"
+              height="1000"
+              class="w-100 h-100 object-fit-cover"
+            />
             <div class="container">
               <div style="bottom: 3rem; z-index: 10" class="carousel-caption">
                 <h1>Another example headline.</h1>
@@ -211,17 +228,13 @@
             </div>
           </div>
           <div style="height: 32rem" class="carousel-item">
-            <svg
-              class="bd-placeholder-img"
-              width="100%"
-              height="100%"
-              xmlns="http://www.w3.org/2000/svg"
-              aria-hidden="true"
-              preserveAspectRatio="xMidYMid slice"
-              focusable="false"
-            >
-              <rect width="100%" height="100%" fill="var(--bs-secondary-color)" />
-            </svg>
+            <img
+              style="filter: brightness(0.4)"
+              src="https://picsum.photos/1200/1000"
+              width="1200"
+              height="1000"
+              class="w-100 h-100 object-fit-cover"
+            />
             <div class="container">
               <div style="bottom: 3rem; z-index: 10" class="carousel-caption text-end">
                 <h1>One more for good measure.</h1>
@@ -243,64 +256,28 @@
       <div class="container marketing">
         <div class="row">
           <div class="col-lg-4">
-            <svg
-              class="bd-placeholder-img rounded-circle"
-              width="140"
-              height="140"
-              xmlns="http://www.w3.org/2000/svg"
-              role="img"
-              aria-label="Placeholder"
-              preserveAspectRatio="xMidYMid slice"
-              focusable="false"
-            >
-              <title>Placeholder</title>
-              <rect width="100%" height="100%" fill="var(--bs-secondary-color)" />
-            </svg>
+            <img class="bd-placeholder-img rounded-circle" width="140" height="140" src="https://picsum.photos/140" />
             <h2 class="fw-normal">Heading</h2>
             <p>
               Some representative placeholder content for the three columns of text below the carousel. This is the
               first column.
             </p>
-            <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p>
+            <p><a class="btn btn-primary" href="#">View details &raquo;</a></p>
           </div>
           <div class="col-lg-4">
-            <svg
-              class="bd-placeholder-img rounded-circle"
-              width="140"
-              height="140"
-              xmlns="http://www.w3.org/2000/svg"
-              role="img"
-              aria-label="Placeholder"
-              preserveAspectRatio="xMidYMid slice"
-              focusable="false"
-            >
-              <title>Placeholder</title>
-              <rect width="100%" height="100%" fill="var(--bs-secondary-color)" />
-            </svg>
+            <img class="bd-placeholder-img rounded-circle" width="140" height="140" src="https://picsum.photos/140" />
             <h2 class="fw-normal">Heading</h2>
             <p>
               Another exciting bit of representative placeholder content. This time, we've moved on to the second
               column.
             </p>
-            <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p>
+            <p><a class="btn btn-primary" href="#">View details &raquo;</a></p>
           </div>
           <div class="col-lg-4">
-            <svg
-              class="bd-placeholder-img rounded-circle"
-              width="140"
-              height="140"
-              xmlns="http://www.w3.org/2000/svg"
-              role="img"
-              aria-label="Placeholder"
-              preserveAspectRatio="xMidYMid slice"
-              focusable="false"
-            >
-              <title>Placeholder</title>
-              <rect width="100%" height="100%" fill="var(--bs-secondary-color)" />
-            </svg>
+            <img class="bd-placeholder-img rounded-circle" width="140" height="140" src="https://picsum.photos/140" />
             <h2 class="fw-normal">Heading</h2>
             <p>And lastly this, the third column of representative placeholder content.</p>
-            <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p>
+            <p><a class="btn btn-primary" href="#">View details &raquo;</a></p>
           </div>
         </div>
 
@@ -316,20 +293,13 @@
             </p>
           </div>
           <div class="col-md-5">
-            <svg
+            <img
+              src="https://picsum.photos/500"
               class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto"
+              alt=""
               width="500"
               height="500"
-              xmlns="http://www.w3.org/2000/svg"
-              role="img"
-              aria-label="Placeholder: 500x500"
-              preserveAspectRatio="xMidYMid slice"
-              focusable="false"
-            >
-              <title>Placeholder</title>
-              <rect width="100%" height="100%" fill="var(--bs-secondary-bg)" />
-              <text x="50%" y="50%" fill="var(--bs-secondary-color)" dy=".3em">500x500</text>
-            </svg>
+            />
           </div>
         </div>
 
@@ -346,20 +316,13 @@
             </p>
           </div>
           <div class="col-md-5 order-md-1">
-            <svg
+            <img
+              src="https://picsum.photos/500"
               class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto"
+              alt=""
               width="500"
               height="500"
-              xmlns="http://www.w3.org/2000/svg"
-              role="img"
-              aria-label="Placeholder: 500x500"
-              preserveAspectRatio="xMidYMid slice"
-              focusable="false"
-            >
-              <title>Placeholder</title>
-              <rect width="100%" height="100%" fill="var(--bs-secondary-bg)" />
-              <text x="50%" y="50%" fill="var(--bs-secondary-color)" dy=".3em">500x500</text>
-            </svg>
+            />
           </div>
         </div>
 
@@ -377,25 +340,18 @@
             </p>
           </div>
           <div class="col-md-5">
-            <svg
+            <img
+              src="https://picsum.photos/500"
               class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto"
+              alt=""
               width="500"
               height="500"
-              xmlns="http://www.w3.org/2000/svg"
-              role="img"
-              aria-label="Placeholder: 500x500"
-              preserveAspectRatio="xMidYMid slice"
-              focusable="false"
-            >
-              <title>Placeholder</title>
-              <rect width="100%" height="100%" fill="var(--bs-secondary-bg)" />
-              <text x="50%" y="50%" fill="var(--bs-secondary-color)" dy=".3em">500x500</text>
-            </svg>
+            />
           </div>
         </div>
 
         <hr style="margin: 5rem 0" />
-        <form>
+        <form class="col-8 mx-auto">
           <div class="bd-example m-0 border-0">
             <div class="row g-2">
               <div class="col-md">
@@ -441,7 +397,7 @@
             <a href="/" class="mb-3 me-2 mb-md-0 text-body-secondary text-decoration-none lh-1">
               <svg class="bi" width="30" height="24"><use xlink:href="#bootstrap"></use></svg>
             </a>
-            <span class="mb-3 mb-md-0 text-body-secondary">© 2023 Company, Inc</span>
+            <span class="mb-3 mb-md-0 text-body-secondary">© 2023 SV ~ Mate</span>
           </div>
           <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
             <li class="ms-3">
