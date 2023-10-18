@@ -6,7 +6,7 @@
     <title>SV ~ Trabajo Integrador Front | Compra Ticket</title>
     <link rel="stylesheet" href="./css/bootstrap.min.css" />
   </head>
-  <body data-bs-spy="scroll" data-bs-target="#navbar" data-bs-root-margin="0px 0px -40%" data-bs-smooth-scroll="true">
+  <body>
     <nav id="navbar" class="navbar navbar-expand-xl fixed-top bg-dark" data-bs-theme="dark">
       <div class="container">
         <a class="navbar-brand me-0" href="#">
@@ -27,26 +27,26 @@
         <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
           <ul class="navbar-nav fw-semibold" style="font-size: 19px">
             <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="#Conferencia">La conferencia</a>
+              <a class="nav-link" href="index.html#Conferencia">La conferencia</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#Oradores">Los oradores</a>
+              <a class="nav-link" href="index.html#Oradores">Los oradores</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#Ubicacion">El lugar y la fecha</a>
+              <a class="nav-link" href="index.html#Ubicacion">El lugar y la fecha</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#SerOrador">Conviértete en orador</a>
+              <a class="nav-link" href="index.html#SerOrador">Conviértete en orador</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link text-success" href="#">Comprar tickets</a>
+              <a class="nav-link text-success active" href="#Comprar">Comprar tickets</a>
             </li>
           </ul>
         </div>
       </div>
     </nav>
     <main style="margin-top: 7rem">
-      <section>
+      <section id="#Comprar">
         <div class="d-flex gap-2 justify-content-center flex-wrap">
           <div class="card text-center border-primary border-2" style="width: 15rem">
             <div class="card-body w-100">
@@ -77,34 +77,34 @@
       <section class="mt-1" id="SerOrador">
         <div class="text-center">
           <small class="text-uppercase">Venta</small>
-          <h2 class="text-uppercase">Valor de ticket <span>$---</span></h2>
+          <h2 class="text-uppercase">Valor de ticket $<span id="valor">---</span></h2>
         </div>
         <form class="row g-3 w-100 mx-auto" style="max-width: 48rem">
           <div class="col-md-6">
-            <input type="text" class="form-control" id="nombre" placeholder="Nombre" />
+            <input required type="text" class="form-control" id="nombre" placeholder="Nombre" />
           </div>
           <div class="col-md-6">
-            <input type="text" class="form-control" id="apellido" placeholder="Apellido" />
+            <input required type="text" class="form-control" id="apellido" placeholder="Apellido" />
           </div>
           <div class="col-12">
-            <input id="email" class="form-control" rows="3" placeholder="Correo" aria-describedby="charla" />
+            <input required id="email" class="form-control" rows="3" placeholder="Correo" aria-describedby="charla" />
           </div>
           <div class="col-md-6">
             <label for="cantidad" class="form-label">Cantidad</label>
-            <input type="number" class="form-control" id="cantidad" placeholder="Cantidad" />
+            <input required value="1" min="1" type="number" class="form-control" id="cantidad" placeholder="Cantidad" />
           </div>
           <div class="col-md-6">
-            <label for="total" class="form-label">Categoria</label>
-            <select id="total" class="form-select">
-              <option selected>Seleccionar</option>
-              <option value="1">Estudiante</option>
-              <option value="2">Trainee</option>
-              <option value="3">Junior</option>
+            <label for="categoria" class="form-label">Categoria</label>
+            <select id="categoria" class="form-select">
+              <option selected value="100">Seleccionar</option>
+              <option value="80">Estudiante</option>
+              <option value="50">Trainee</option>
+              <option value="15">Junior</option>
             </select>
           </div>
-          <div class="alert alert-info bg-info-emphasis" role="alert">Total a pagar: <span>$---</span></div>
+          <div class="alert alert-info bg-info-emphasis" role="alert">Total a pagar: $<span id="total">---</span></div>
           <div class="col-md-6">
-            <button type="submit" class="btn btn-success w-100">Borrar</button>
+            <button type="reset" class="btn btn-success w-100">Borrar</button>
           </div>
           <div class="col-md-6">
             <button type="submit" class="btn btn-success w-100">Resumen</button>
@@ -125,5 +125,6 @@
       </div>
     </footer>
     <script src="./js/bootstrap.min.js"></script>
+    <script src="./js/main.js"></script>
   </body>
 </html>
